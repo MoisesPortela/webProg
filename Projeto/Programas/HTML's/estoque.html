@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Banco de doação de sangue (BDDS)</title>
+  <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+</head>
+<body>
+  <h1>Estoque</h1>
+  <hr/>
+
+  <ul>
+      <table>
+      <tr>
+          <th>Tipo</th>
+          <th>RH</th>
+          <th>Quantidade disponível</th>
+      </tr>
+      {{ estoque | safe }}
+  </table>
+      <li><form action="/menu" method="post"><button type="submit">Voltar ao Menu</button></form></li>
+
+  </ul>
+</body>
+</html>
