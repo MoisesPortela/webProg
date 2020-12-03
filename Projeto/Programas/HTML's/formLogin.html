@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Branco de doação de sangue (BDDS)</title>
+    <link rel="stylesheet" href="static/css/padrão.css" type="text/css" />
+  </head>
+  <body>
+    <h1>Login</h1>
+    {{msg}}
+    <form action="/loginUsuario" method="post">
+      <label>Nome:</label>
+      <input type="text" name="nome" size="12" maxlength="25" required /><br />
+      <label>Senha:</label>
+      <input type="password" name="senha" size="12" maxlength="25" required />
+      <br />
+      <input type="submit" value="Login" />
+    </form>
+    <li><form action="/formCadastroUsuario" method="post"><button type="submit">Cadastrar</button></form></li>
+  </body>
+</html>
