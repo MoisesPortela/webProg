@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+  <title>Formulário para alteração de doadores</title>
+  <script>
+      function setSelectFields(doadorSexo, doadorEndereco){
+          document.getElementById('selectSexo').value = doadorSexo;
+          document.getElementById('endereco').value = doadorEndereco;
+      }
+  </script>
+</head>
+<body onload="setSelectFields('{{doador[5]}}', '{{doador[6]}}')" >
+  <h1>Formulário de alteração de doadores</h1>
+  <hr/>
+  <form action="/alterarDoador" method="post">
+      <table>
+          <tr>
+              <td>CPF: </td>
+              <td><input type="text" name="CPF" size="30" maxlength="50" value="{{doador[1]}}" required/></td>
+          </tr>
+          <tr>
+              <td>Nome:</td>
+              <td><input type="text" name="nome" size="8" maxlength="50" value="{{doador[2]}}" required/></td>
+          </tr>
+
+          <tr>
+              <td>Peso:</td>
+              <td><input type="number" name="peso" size="3" min="50" max="120" step="0.1" value="{{doador[3]}}" required/></td>
+          </tr>
+          <tr>
+              <td>Idade:</td>
+              <td><input type="number" name="idade" size="3" min="18" max="69" step="1" value="{{doador[4]}}" required/></td>
+          </tr>
+          <tr>
+              <td>Sexo:</td>
+              <td>
+                 <SELECT name="sexo" id="selectSexo" required>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Indefinido">Indefinido</option>
+                    <option value="Outros">Outros</option>
+                 </SELECT>
+              </td>
+          </tr>
+          <tr>
+              <td>Endereço:</td>
+              <td><textarea rows="3" cols="60" name="endereco" id="endereco"></textarea></td>
+          </tr>
+
+      </table>
+      <br/>
+      <input type="hidden" name="idt" value="{{ doador[0] }}"/>
+      <input type="submit" value="Alterar Doador"/>
+  </form>
+  <hr/>
+  <br/>
+  <li><form action="/menu" method="POST"><button type="submit">Voltar ao Menu</button></form></li>
+  <li><form action="/doador" method="POST"><button type="submit"> Alterar outro doador</button></form></li>
+</body>
+</html>
