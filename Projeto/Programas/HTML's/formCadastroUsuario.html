@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Branco de doação de sangue (BDDS)</title>
+    <link href="static/css/padrão.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <h1>Formulário de inclusão de Doador</h1>
+    <hr />
+    <hr />
+    <form action="/incluirUsuario" method="post">
+      <table>
+        <tr>
+          <td>Nome:</td>
+          <td>
+            <input type="text" name="nome" size="8" maxlength="50" required />
+          </td>
+        </tr>
+        <tr>
+          <td>Senha:</td>
+          <td>
+            <input
+              type="password"
+              name="senha"
+              size="8"
+              maxlength="25"
+              required
+            />
+          </td>
+        </tr>
+      </table>
+      <br />
+      <input type="submit" value="Registrar" />
+    </form>
+    <hr />
+    <br />
+    [<a href="/"> Já possui cadastro? </a>]
+  </body>
+</html>
