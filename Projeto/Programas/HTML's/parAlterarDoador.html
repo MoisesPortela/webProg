@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <link href="static/css/padrão.css" rel="stylesheet" type="text/css">
+  <title>Busca por CPF para Alteração de Doador</title>
+</head>
+<body>
+  <h1>Busca por cpf para alterar doador:</h1>
+  <hr/>
+  <form action="/formalterardoador" method="post">
+      <table>
+          <tr>
+              <td>CPF do Doador:</td>
+             <td><input type="text" name="CPF" size="30" maxlength="50" required/></td>
+          </tr>
+      </table>
+      <br/>
+      <input type="submit" value="Alterar Doador"/>
+  </form>
+  <hr/>
+  <br/>
+  <a href="/"> Voltar ao Menu </a>
+</body>
+</html>
