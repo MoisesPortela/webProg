@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <link href="static/css/padrão.css" rel="stylesheet" type="text/css">
+  <title>Parâmetros de Consulta de Pacientes</title>
+</head>
+<body>
+  <h1>Parâmetros de consulta de Pacientes</h1>
+  <hr/>
+  <form action="/consultarPaciente" method="post">
+      <table>
+          <tr>
+              <td>Nome:</td>
+              <td>{{ nome | safe }}</td>
+          </tr>
+          <tr>
+              <td>Faixa Etária:</td>
+              <td>
+                  <input type="number" name="ini" size="10" min="0." max="100" step="1" value="{{ menor }}"  required/>
+                  <input type="number" name="fim" size="10" min="0" max="100" step="1" value="{{ maior }}" required/>
+              </td>
+          </tr>
+      </table>
+      <br/>
+      <input type="submit" value="Consultar Paciente"/>
+  </form>
+  <br/>
+  <hr/>
+  <br/>
+  <a href="/"> Voltar ao Menu </a>
+</body>
+</html>
