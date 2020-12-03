@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Banco de doação de sangue (BDDS)</title>
+  <link rel="stylesheet" href="/static/css/style.css" type="text/css">
+</head>
+<body>
+  <h1>Doador</h1>
+  <hr/>
+
+  <ul>
+      <table>
+      <tr>
+          <th>CPF:</th>
+          <th>Nome:</th>
+          <th>Peso:</th>
+          <th>Idade:</th>
+          <th>Sexo:</th>
+          <th>Local:</th>
+          <th>Tipo:</th>
+          <th>RH:</th>
+          <th>Total de doações:</th>
+          <th>Total de litros doado:</th>
+          <th>Alterar:</th>
+          <th>Excluir:</th>
+          <th>Nova doação: </th>
+      </tr>
+      {{ doadores | safe }}
+  </table>
+      <li><form action="/formCadastrarDoador" method="POST"><button type="submit">Incluir</button></form></li>
+      <li><form action="/menu" method="post"><button type="submit">Voltar ao Menu</button></form></li>
+
+  </ul>
+</body>
+</html>
