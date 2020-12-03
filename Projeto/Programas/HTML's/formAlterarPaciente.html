@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <link href="/static/css/style.css" rel="stylesheet" type="text/css">
+  <title>Formulário para alteração de paciente</title>
+  <script>
+      function setSelectFields(pacienteSexo, pacienteNecessidade, pacienteEndereco){
+          document.getElementById('selectSexo').value = pacienteSexo;
+          document.getElementById('selectNecessidade').value = pacienteNecessidade;
+          document.getElementById('endereco').value = pacienteEndereco;
+      }
+  </script>
+</head>
+<body onload="setSelectFields('{{paciente[5]}}', '{{paciente[9]}}','{{paciente[6]}}')" >
+  <h1>Formulário de alteração de pacientes</h1>
+  <hr/>
+  <form action="/alterarPaciente" method="post">
+      <table>
+          <tr>
+              <td>CPF: </td>
+              <td><input type="text" name="CPF" size="30" maxlength="50" value="{{paciente[1]}}" required/></td>
+          </tr>
+          <tr>
+              <td>Nome:</td>
+              <td><input type="text" name="nome" size="8" maxlength="50" value="{{paciente[2]}}" required/></td>
+          </tr>
+
+          <tr>
+              <td>Peso:</td>
+              <td><input type="number" name="peso" size="3" step="0.1" value="{{paciente[3]}}" required/></td>
+          </tr>
+          <tr>
+              <td>Idade:</td>
+              <td><input type="number" name="idade" size="3" step="1" value="{{paciente[4]}}" required/></td>
+          </tr>
+          <tr>
+              <td>Sexo:</td>
+              <td>
+                 <SELECT name="sexo" id="selectSexo" required>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Indefinido">Indefinido</option>
+                    <option value="Outros">Outros</option>
+                 </SELECT>
+              </td>
+          </tr>
+          <tr>
+            <td>Necessidade de Sangue:</td>
+            <td>
+               <SELECT name="necessidade" id="selectNecessidade" required>
+                  <option value="1">Sim</option>
+                  <option value="0">Não</option>
+               </SELECT>
+            </td>
+        </tr>
+          <tr>
+              <td>Endereço:</td>
+              <td><textarea rows="3" cols="60" name="endereco" id="endereco"></textarea></td>
+          </tr>
+
+      </table>
+      <br/>
+      <input type="hidden" name="idt" value="{{ paciente[0] }}"/>
+      <input type="submit" value="Alterar Paciente"/>
+  </form>
+  <hr/>
+  <br/>
+  <li><form action="/menu" method="POST"><button type="submit">Voltar ao Menu</button></form></li>
+  <li><form action="/paciente" method="POST"><button type="submit"> Alterar outro paciente</button></form></li>
+</body>
+</html>
