@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Branco de doação de sangue (BDDS)</title>
+  <link rel="stylesheet" href="static/css/padrão.css" type="text/css">
+</head>
+<body>
+  <h1>Formulário de inclusão de Doador</h1>
+  <hr/>
+   <hr/>
+  <form action="/cadastrarDoador" method="post">
+      <table>
+          <tr>
+              <td>CPF: </td>
+              <td><input type="text" name="CPF" size="30" maxlength="50" required/></td>
+          </tr>
+          <tr>
+              <td>Nome:</td>
+              <td><input type="text" name="nome" size="8" maxlength="50" required/></td>
+          </tr>
+
+          <tr>
+              <td>Peso:</td>
+              <td><input type="number" name="peso" size="3" min="50" max="120" step="0.1" required/></td>
+          </tr>
+          <tr>
+              <td>Idade:</td>
+              <td><input type="number" name="idade" size="3" min="18" max="69" step="1" required/></td>
+
+          </tr>
+          <tr>
+              <td>Sexo:</td>
+              <td>
+         <SELECT name="sexo" required>
+            <option>Masculino</option>
+            <option>Feminino</option>
+            <option>Indefinido</option>
+            <option>Outros</option>
+         </SELECT>
+
+ </td>
+          </tr>
+   <tr>
+              <td>Endereço:</td>
+              <td><textarea rows="3" cols="60" name="endereco"></textarea></td>
+          </tr>
+              <td>RH: </td>
+              <td>
+         <SELECT name="rh" required>
+            <option>+</option>
+            <option>-</option>
+         </SELECT>
+
+ </td>
+              <td>Tipo do sangue: </td>
+              <td>
+         <SELECT name="tipo" required>
+            <option> AB </option>
+            <option> A </option>
+            <option> B </option>
+            <option> O </option>
+         </SELECT>
+
+ </td>
+
+      </table>
+      <br/>
+      <input type="submit" value="Incluir Doador"/>
+  </form>
+  <hr/>
+  <br/>
+  <li><form action="/menu" method="POST"><button type="submit">Voltar ao Menu</button></form></li>
+
+</body>
+</html>
